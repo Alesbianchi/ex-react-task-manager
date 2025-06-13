@@ -26,10 +26,44 @@ nav a.active {
 }
 
 h1 {
-  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
 .container {
-  padding: 2rem;
+  padding: 1rem;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.task-table th {
+  text-align: left;
+  padding: 0.75rem;
+  background-color: #f0f0f0;
+  border-bottom: 2px solid #888;
+}
+
+.task-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Colori dinamici in base allo stato */
+.status.todo {
+  background-color: #f8d7da;
+  /* rosso chiaro */
+}
+
+.status.doing {
+  background-color: #fff3cd;
+  /* giallo chiaro */
+}
+
+.status.done {
+  background-color: #d4edda;
+  /* verde chiaro */
 }
