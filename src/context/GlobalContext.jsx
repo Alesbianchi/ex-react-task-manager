@@ -4,16 +4,10 @@ import { useTasks } from './useTasks';
 export const GlobalContext = createContext();
 
 export function GlobalProvider({ children }) {
-    const {
-        tasks,
-        setTasks,
-        addTask,
-        removeTask,
-        updateTask
-    } = useTasks();
+    const taskManager = useTasks();
 
     return (
-        <GlobalContext.Provider value={{ tasks, setTasks, addTask, removeTask, updateTask }}>
+        <GlobalContext.Provider value={taskManager}>
             {children}
         </GlobalContext.Provider>
     );
