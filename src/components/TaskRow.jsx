@@ -1,28 +1,27 @@
 import React from 'react';
-
-
-const statusStyles = {
-    "To do": { backgroundColor: '#f8d7da' },   // Rosso chiaro
-    "Doing": { backgroundColor: '#fff3cd' },   // Giallo chiaro
-    "Done": { backgroundColor: '#d4edda' }     // Verde chiaro
-};
+import { Link } from 'react-router-dom';
 
 const tdStyle = {
     padding: '0.75rem',
-    borderBottom: '1px solid #ccc'
+    borderBottom: '1px solid #ccc',
 };
 
 function TaskRow({ task }) {
     return (
         <tr>
-            <td>{task.title}</td>
-            <td className={`status ${task.status.replace(/\s/g, '').toLowerCase()}`}>
+            <td style={tdStyle}>
+                <Link to={`/task/${task.id}`} style={{ color: '#007bff', textDecoration: 'none' }}>
+                    {task.title}
+                </Link>
+            </td>
+            <td className={`status ${task.status.replace(/\s/g, '').toLowerCase()}`} style={tdStyle}>
                 {task.status}
             </td>
-            <td>{new Date(task.createdAt).toLocaleDateString('it-IT')}</td>
+            <td style={tdStyle}>
+                {new Date(task.createdAt).toLocaleDateString('it-IT')}
+            </td>
         </tr>
     );
 }
 
-// Evita render inutili
 export default React.memo(TaskRow);
