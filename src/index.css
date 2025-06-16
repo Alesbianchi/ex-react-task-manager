@@ -55,15 +55,65 @@ h1 {
 /* Colori dinamici in base allo stato */
 .status.todo {
   background-color: #f8d7da;
-  /* rosso chiaro */
+
 }
 
 .status.doing {
   background-color: #fff3cd;
-  /* giallo chiaro */
+
 }
 
 .status.done {
   background-color: #d4edda;
-  /* verde chiaro */
+
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+form label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+form input[type="text"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  padding: 0.6rem 1.2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+form p {
+  margin: 0;
+  color: red;
+  font-size: 0.9rem;
 }
